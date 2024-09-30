@@ -1,6 +1,6 @@
 import eslint from '@eslint/js';
-import tsEslint from 'typescript-eslint';
 import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
+import tsEslint from 'typescript-eslint';
 
 const core = [
     eslint.configs.recommended,
@@ -16,6 +16,7 @@ const core = [
                         'Do not use TypeScript enums. Please use const enums instead. See: https://dev.to/ivanzm123/dont-use-enums-in-typescript-they-are-very-dangerous-57bh for details.',
                 },
             ],
+            'sort-imports': ['error'],
             '@typescript-eslint/ban-ts-comment': [
                 'error',
                 {
