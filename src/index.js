@@ -1,5 +1,9 @@
 import eslint from '@eslint/js';
 import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
+import { fixupPluginRules } from '@eslint/compat';
+import hooksPlugin from 'eslint-plugin-react-hooks';
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import reactPlugin from 'eslint-plugin-react';
 import tsEslint from 'typescript-eslint';
 
 const core = [
@@ -30,11 +34,24 @@ const core = [
     },
 ];
 
-const nextJs = [
-    // TODO: TF2-9: Create a config specifically for React/Next
+const react = [
+    ...core,
+    reactPlugin.configs.flat.recommended,
+    jsxA11yPlugin.flatConfigs.recommended,
+    // `react-hooks` plugin doesn't support "flat configs" yet so it has to be wrapped in the compatibility layer
+    {
+        plugins: { 'react-hooks': fixupPluginRules(hooksPlugin) },
+        rules: hooksPlugin.configs.recommended.rules,
+    },
+    {
+        settings: { react: { version: 'detect' } },
+        rules: {
+            'react/react-in-jsx-scope': 'off',
+        },
+    },
 ];
 
-export const eslintConfigs = { core, nextJs };
+export const eslintConfigs = { core, react };
 
 /** @type {import('prettier').Config} */
 export const prettierConfig = {
