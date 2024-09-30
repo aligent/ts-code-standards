@@ -25,9 +25,6 @@ const core = [
                 'error',
                 {
                     'ts-expect-error': 'allow-with-description',
-                    'ts-ignore': true,
-                    'ts-nocheck': true,
-                    'ts-check': true,
                 },
             ],
         },
