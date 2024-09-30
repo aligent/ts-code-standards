@@ -17,5 +17,12 @@
   "devDependencies": {
     "eslint": "^9.11.1",
     "prettier": "^3.3.3"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "eslint": "^9"
+      }
+    }
   }
 }
