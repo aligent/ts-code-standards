@@ -4,15 +4,32 @@ options:
 definitions:
   caches:
     pnpm: $BITBUCKET_CLONE_DIR/.pnpm-store
+  steps:
+    - step: &test
+        name: Test
+        script:
+          - corepack enable
+          - corepack prepare pnpm@9.11.0 --activate
+          - pnpm install
+          - pnpm test
+        caches:
+          - pnpm
+    - step: &publish
+        name: Publish
+        script:
+          - corepack enable
+          - corepack prepare pnpm@9.11.0 --activate
+          - pnpm install
+          - pnpm set registry https://npm.corp.aligent.consulting/
+          - npm config set //npm.corp.aligent.consulting/:_authToken $NPM_PUBLISH_TOKEN
+          - pnpm publish .
+        caches:
+          - pnpm
 pipelines:
   pull-requests:
     "**":
-      - step:
-          name: Test
-          script:
-            - corepack enable
-            - corepack prepare pnpm@latest-9 --activate
-            - pnpm install
-            - pnpm test
-          caches:
-            - pnpm
+      - step: *test
+  tags:
+    "*.*.*":
+      - step: *test
+      - step: *publish
