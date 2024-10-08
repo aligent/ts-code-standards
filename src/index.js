@@ -27,6 +27,7 @@ const core = [
                     'ts-expect-error': 'allow-with-description',
                 },
             ],
+            'array-callback-return': ['error', { checkForEach: true }],
         },
     },
 ];
