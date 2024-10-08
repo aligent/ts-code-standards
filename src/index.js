@@ -28,6 +28,10 @@ const core = [
                 },
             ],
             'array-callback-return': ['error', { checkForEach: true }],
+            '@typescript-eslint/no-unused-vars': [
+                'error',
+                { argsIgnorePattern: '^_', ignoreRestSiblings: true },
+            ],
         },
     },
 ];
