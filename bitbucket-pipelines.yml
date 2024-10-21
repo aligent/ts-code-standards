@@ -1,4 +1,4 @@
-image: node:22.9-bookworm
+image: node:22.10-bookworm
 options:
   max-time: 10
 definitions:
