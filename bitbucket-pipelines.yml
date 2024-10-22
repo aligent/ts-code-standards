@@ -1,4 +1,4 @@
-image: node:22.9-bookworm
+image: node:22.10-bookworm
 options:
   max-time: 10
 definitions:
@@ -9,7 +9,7 @@ definitions:
         name: Test
         script:
           - corepack enable
-          - corepack prepare pnpm@9.12.1 --activate
+          - corepack prepare pnpm@9.12.2 --activate
           - pnpm install
           - pnpm test
         caches:
@@ -18,7 +18,7 @@ definitions:
         name: Publish
         script:
           - corepack enable
-          - corepack prepare pnpm@9.12.1 --activate
+          - corepack prepare pnpm@9.12.2 --activate
           - pnpm install
           - pnpm set registry https://npm.corp.aligent.consulting/
           - npm config set //npm.corp.aligent.consulting/:_authToken $NPM_PUBLISH_TOKEN
