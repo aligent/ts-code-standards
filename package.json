@@ -4,7 +4,10 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "test": "tsc && eslint ."
+    "test": "tsc && eslint .",
+    "format": "prettier --ignore-path .prettierignore --check \"**/*.+(js|ts|json)\"",
+    "format:check": "pnpm run format",
+    "format:fix": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|json)\""
   },
   "dependencies": {
     "@eslint/compat": "^1.2.1",
