@@ -10,7 +10,7 @@
     "format:fix": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|json)\""
   },
   "dependencies": {
-    "@eslint/compat": "^1.2.1",
+    "@eslint/compat": "^1.2.2",
     "@eslint/js": "^9.13.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsx-a11y": "^6.10.1",
