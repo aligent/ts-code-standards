@@ -4,11 +4,6 @@ Standard code quality tooling for projects written in TypeScript.
 
 ## Usage
 
-Set up your package manager to use Aligent's private NPM registry:
-
-- Go to `https://npm.corp.aligent.consulting` and log in.
-- Click the Gear icon to get instructions for configuring your package manager.
-
 Install this module:
 
     # NPM
