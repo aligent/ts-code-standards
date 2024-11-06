@@ -42,8 +42,3 @@ jobs:
           pnpm publish .
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Update the package version number
-        run: git push
-        env:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
