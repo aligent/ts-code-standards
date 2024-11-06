@@ -36,6 +36,7 @@ jobs:
         run: |
           git config --global user.name "Automated NPM Release"
           git config --global user.email "devops+npm-deploy@aligent.com.au"
+          pnpm version $VERSION --allow-same-version
           echo "Publishing $PACKAGE @ $VERSION"
           pnpm config set registry https://registry.npmjs.org/
           pnpm publish .
