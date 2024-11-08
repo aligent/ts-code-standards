@@ -9,6 +9,10 @@
     "./tsconfigs-base": "./tsconfigs/base.json",
     "./tsconfigs-react": "./tsconfigs/react.json"
   },
+  "files": [
+    "dist",
+    "tsconfigs"
+  ],
   "scripts": {
     "test": "tsc && eslint .",
     "build": "npx rollup -c",

@@ -2,7 +2,7 @@
 const OUT_DIR = 'dist';
 
 export default {
-    input: 'src/index.ts',
+    input: 'src/index.js',
     output: [
         {
             file: `${OUT_DIR}/index.cjs`,

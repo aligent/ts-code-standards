@@ -4,64 +4,97 @@ Standard code quality tooling for projects written in TypeScript.
 
 ## Usage
 
-Install this module:
+### Install this package:
 
-    # NPM
-    npm install -D @aligent/ts-code-standards
-    # Yarn
-    yarn add -D @aligent/ts-code-standards
-    # PNPM
-    pnpm add -D @aligent/ts-code-standards
-
-Copy the `.editorconfig` from this repo into your own.
-
-Add the following to your `prettier.config.js`:
-
-```javascript
-import { prettierConfig } from '@aligent/ts-code-standards';
-
-export default prettierConfig;
+```bash
+  # NPM
+  npm install -D @aligent/ts-code-standards
+  # Yarn
+  yarn add -D @aligent/ts-code-standards
+  # PNPM
+  pnpm add -D @aligent/ts-code-standards
 ```
 
-Then install the ESLint and TypeScript configs depending on what type of project you are setting up:
+### Copy the `.editorconfig` from this package into your own project:
 
-### General Projects
-
-Add the following to your `eslint.config.js`:
-
-```javascript
-import { eslintConfigs } from '@aligent/ts-code-standards';
-
-export default [...eslintConfigs.base];
+```bash
+  # Assuming your package is installed in `node_modules` folder
+  cp node_modules/@aligent/ts-code-standards/.editorconfig ./.editorconfig
 ```
 
-Add the following to your `tsconfig.json`:
+### Add the following to your `prettier.config.js`:
+
+- For ES modules project:
+
+  ```javascript
+  import { prettierConfig } from '@aligent/ts-code-standards';
+
+  export default prettierConfig;
+  ```
+
+- For CommonJS project:
+
+  ```javascript
+  const { prettierConfig } = require('@aligent/ts-code-standards');
+
+  module.exports = prettierConfig;
+  ```
+
+### Install the ESLint and TypeScript configs:
+
+#### General Projects
+
+##### Add the following to your `eslint.config.js`:
+
+- For ES modules project:
+
+  ```javascript
+  import { eslintConfigs } from '@aligent/ts-code-standards';
+
+  export default [...eslintConfigs.base];
+  ```
+
+- For CommonJS project:
+
+  ```javascript
+  const { eslintConfigs } = require('@aligent/ts-code-standards');
+
+  module.exports = [...eslintConfigs.base];
+  ```
+
+##### Add the following to your `tsconfig.json`:
 
 ```json
-{
-  "extends": "@aligent/ts-code-standards/tsconfigs/base.json"
-}
+{ "extends": "@aligent/ts-code-standards/tsconfigs-base" }
 ```
 
-### React Projects
+#### React Projects
 
-Add the following to your `eslint.config.js`:
+##### Add the following to your `eslint.config.js`:
 
-```javascript
-import { eslintConfigs } from '@aligent/ts-code-standards';
+- For ES modules project:
 
-export default [...eslintConfigs.react];
-```
+  ```javascript
+  import { eslintConfigs } from '@aligent/ts-code-standards';
 
-Add the following to your `tsconfig.json`:
+  export default [...eslintConfigs.react];
+  ```
+
+- For CommonJS project:
+
+  ```javascript
+  const { eslintConfigs } = require('@aligent/ts-code-standards');
+
+  module.exports = [...eslintConfigs.react];
+  ```
+
+##### Add the following to your `tsconfig.json`:
 
 ```json
-{
-  "extends": "@aligent/ts-code-standards/tsconfigs/react.json"
-}
+{ "extends": "@aligent/ts-code-standards/tsconfigs-react" }
 ```
 
 ## Notes
 
-- You'll need to add `include`, `exclude`, `paths` etc. to your `tsconfig` file. These settings will
-  be project specific.
+- You'll need to add `include`, `exclude`, `paths` etc. to your `tsconfig` file. These settings will be project specific.
+- Your project is considered as `ES modules` project if the `type` option in the nearest `package.json` is set to `module`. Otherwise, it's a CommonJS project. For more information on this, please check [CommonJS vs. ES modules in Node.js](https://blog.logrocket.com/commonjs-vs-es-modules-node-js/).
