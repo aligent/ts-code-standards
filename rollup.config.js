@@ -1,4 +1,3 @@
-
 const OUT_DIR = 'dist';
 
 export default {
