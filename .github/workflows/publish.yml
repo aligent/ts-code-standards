@@ -26,6 +26,9 @@ jobs:
       - name: Install
         run: pnpm install
 
+      - name: Build
+        run: pnpm build
+
       - name: Preparing environment for release
         run: |
           VERSION=$(echo $GITHUB_REF_NAME | sed 's/^.*[A-Za-z]-//g')
