@@ -7,7 +7,9 @@
       "import": "./dist/index.mjs"
     },
     "./tsconfigs-base": "./tsconfigs/base.json",
-    "./tsconfigs-react": "./tsconfigs/react.json"
+    "./tsconfigs-react": "./tsconfigs/react.json",
+    "./tsconfigs/base.json": "./tsconfigs/base.json",
+    "./tsconfigs/react.json": "./tsconfigs/react.json"
   },
   "files": [
     "dist",
@@ -15,7 +17,7 @@
   ],
   "scripts": {
     "test": "tsc && eslint .",
-    "build": "npx rollup -c",
+    "build": "rollup -c",
     "format": "prettier --ignore-path .prettierignore --check \"**/*.+(js|ts|json)\"",
     "format:check": "pnpm run format",
     "format:fix": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|json)\""

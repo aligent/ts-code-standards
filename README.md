@@ -98,3 +98,4 @@ Standard code quality tooling for projects written in TypeScript.
 
 - You'll need to add `include`, `exclude`, `paths` etc. to your `tsconfig` file. These settings will be project specific.
 - Your project is considered as `ES modules` project if the `type` option in the nearest `package.json` is set to `module`. Otherwise, it's a CommonJS project. For more information on this, please check [CommonJS vs. ES modules in Node.js](https://blog.logrocket.com/commonjs-vs-es-modules-node-js/).
+- For backward compatibility, we also export `./tsconfigs/base.json` and `./tsconfigs/react.json`. However, you should update to the new syntax when configuring your `tsconfig.json` when possible.
