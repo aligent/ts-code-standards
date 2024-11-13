@@ -5,4 +5,7 @@ export default [
     {
         settings: { react: { version: '18' } },
     },
+    {
+        ignores: ['dist/'],
+    },
 ];
