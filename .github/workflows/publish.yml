@@ -41,9 +41,10 @@ jobs:
         run: |
           git config --global user.name "Automated NPM Release"
           git config --global user.email "devops+npm-deploy@aligent.com.au"
-          yarn version $VERSION --allow-same-version
+          # yarn version only works if there is already a version entry in package.json
+          npm version $VERSION --allow-same-version
           echo "Publishing $PACKAGE @ $VERSION"
           yarn config set registry https://registry.npmjs.org/
-          yarn publish .
+          yarn npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
