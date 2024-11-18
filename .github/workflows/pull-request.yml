@@ -19,6 +19,9 @@ jobs:
       - name: Fetch target
         run: git fetch origin ${{ github.event.pull_request.base.ref }}
 
+      - name: Enable Corepack
+        run: corepack enable
+
       - uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
@@ -42,6 +45,9 @@ jobs:
 
       - name: Fetch target
         run: git fetch origin ${{ github.event.pull_request.base.ref }}
+
+      - name: Enable Corepack
+        run: corepack enable
 
       - uses: actions/setup-node@v4
         with:
