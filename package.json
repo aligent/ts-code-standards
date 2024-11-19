@@ -17,10 +17,7 @@
   ],
   "scripts": {
     "test": "tsc && eslint .",
-    "build": "rollup -c",
-    "format": "prettier --ignore-path .prettierignore --check \"**/*.+(js|ts|json)\"",
-    "format:check": "pnpm run format",
-    "format:fix": "prettier --ignore-path .prettierignore --write \"**/*.+(js|ts|json)\""
+    "build": "rollup -c"
   },
   "dependencies": {
     "@eslint/compat": "^1.2.2",
