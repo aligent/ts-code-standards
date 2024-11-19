@@ -1,5 +1,5 @@
 import eslint from '@eslint/js';
-import eslintConfigPrettier from 'eslint-config-prettier';
+import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
 import { fixupPluginRules } from '@eslint/compat';
 import hooksPlugin from 'eslint-plugin-react-hooks';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
@@ -9,7 +9,7 @@ import tsEslint from 'typescript-eslint';
 const core = [
     eslint.configs.recommended,
     ...tsEslint.configs.recommended,
-    eslintConfigPrettier,
+    eslintPluginPrettier,
     {
         rules: {
             'no-restricted-syntax': [
