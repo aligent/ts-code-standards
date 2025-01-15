@@ -1,9 +1,9 @@
-import eslint from '@eslint/js';
-import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
 import { fixupPluginRules } from '@eslint/compat';
-import hooksPlugin from 'eslint-plugin-react-hooks';
+import eslint from '@eslint/js';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
 import reactPlugin from 'eslint-plugin-react';
+import hooksPlugin from 'eslint-plugin-react-hooks';
 import tsEslint from 'typescript-eslint';
 
 const core = [
