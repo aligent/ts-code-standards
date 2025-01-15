@@ -1,9 +1,9 @@
-import eslint from '@eslint/js';
-import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
 import { fixupPluginRules } from '@eslint/compat';
-import hooksPlugin from 'eslint-plugin-react-hooks';
+import eslint from '@eslint/js';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
 import reactPlugin from 'eslint-plugin-react';
+import hooksPlugin from 'eslint-plugin-react-hooks';
 import tsEslint from 'typescript-eslint';
 
 const core = [
@@ -20,7 +20,7 @@ const core = [
                         'Do not use TypeScript enums. Please use const enums instead. See: https://dev.to/ivanzm123/dont-use-enums-in-typescript-they-are-very-dangerous-57bh for details.',
                 },
             ],
-            'sort-imports': ['error'],
+            'sort-imports': ['off'],
             '@typescript-eslint/ban-ts-comment': [
                 'error',
                 {
@@ -61,5 +61,5 @@ export const prettierConfig = {
     arrowParens: 'avoid',
     singleQuote: true,
     trailingComma: 'es5',
-    plugins: ['prettier-plugin-tailwindcss'],
+    plugins: ['prettier-plugin-tailwindcss', 'prettier-plugin-organize-imports'],
 };
