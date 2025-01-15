@@ -45,6 +45,6 @@ jobs:
           npm version $VERSION --allow-same-version
           echo "Publishing $PACKAGE @ $VERSION"
           npm config set registry https://registry.npmjs.org/
-          yarn npm publish --access public
+          npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
