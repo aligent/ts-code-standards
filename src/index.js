@@ -20,7 +20,7 @@ const core = [
                         'Do not use TypeScript enums. Please use const enums instead. See: https://dev.to/ivanzm123/dont-use-enums-in-typescript-they-are-very-dangerous-57bh for details.',
                 },
             ],
-            'sort-imports': ['error'],
+            'sort-imports': ['off'],
             '@typescript-eslint/ban-ts-comment': [
                 'error',
                 {
@@ -61,5 +61,5 @@ export const prettierConfig = {
     arrowParens: 'avoid',
     singleQuote: true,
     trailingComma: 'es5',
-    plugins: ['prettier-plugin-tailwindcss'],
+    plugins: ['prettier-plugin-tailwindcss', 'prettier-plugin-organize-imports'],
 };
