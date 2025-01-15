@@ -44,7 +44,7 @@ jobs:
           # yarn version only works if there is already a version entry in package.json
           npm version $VERSION --allow-same-version
           echo "Publishing $PACKAGE @ $VERSION"
-          yarn config set registry https://registry.npmjs.org/
+          npm config set registry https://registry.npmjs.org/
           yarn npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
