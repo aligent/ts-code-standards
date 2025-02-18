@@ -32,6 +32,12 @@ const core = [
                 'error',
                 { argsIgnorePattern: '^_', ignoreRestSiblings: true },
             ],
+            '@typescript-eslint/array-type': [
+                'error',
+                {
+                    default: 'array-simple',
+                },
+            ],
         },
     },
 ];
