@@ -13,7 +13,8 @@
   },
   "files": [
     "dist",
-    "tsconfigs"
+    "tsconfigs",
+    ".editorconfig"
   ],
   "scripts": {
     "test": "tsc && eslint .",
