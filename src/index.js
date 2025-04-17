@@ -30,7 +30,11 @@ const core = [
             'array-callback-return': ['error', { checkForEach: true }],
             '@typescript-eslint/no-unused-vars': [
                 'error',
-                { argsIgnorePattern: '^_', ignoreRestSiblings: true },
+                {
+                    argsIgnorePattern: '^_',
+                    ignoreRestSiblings: true,
+                    reportUsedIgnorePattern: true,
+                },
             ],
             '@typescript-eslint/array-type': [
                 'error',
