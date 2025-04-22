@@ -1,3 +1,4 @@
 .github/* @aligent/aligent-devops
 
 * @aligent/frontends
+* @aligent/microservices
