@@ -6,7 +6,7 @@ import reactPlugin from 'eslint-plugin-react';
 import hooksPlugin from 'eslint-plugin-react-hooks';
 import tsEslint from 'typescript-eslint';
 
-const core = [
+const base = [
     eslint.configs.recommended,
     ...tsEslint.configs.recommended,
     eslintPluginPrettier,
@@ -43,7 +43,7 @@ const core = [
 ];
 
 const react = [
-    ...core,
+    ...base,
     reactPlugin.configs.flat.recommended,
     jsxA11yPlugin.flatConfigs.recommended,
     // `react-hooks` plugin doesn't support "flat configs" yet so it has to be wrapped in the compatibility layer
@@ -60,7 +60,18 @@ const react = [
     },
 ];
 
-export const eslintConfigs = { core, react };
+/**
+ * Exported ESLint configurations.
+ * @property {object} base - The base ESLint configuration.
+ * @property {object} core - The base ESLint configuration.
+ * @property {object} react - The React ESLint configuration.
+ */
+export const eslintConfigs = {
+    base,
+    /** @deprecated Use 'base' instead. */
+    core: base,
+    react,
+};
 
 /** @type {import('prettier').Config} */
 export const prettierConfig = {
