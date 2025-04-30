@@ -2,5 +2,4 @@
 .github/ @aligent/devops
 
 # Frontend and Microservices teams own everything else
-* @aligent/frontends
-* @aligent/microservices
+* @aligent/frontends @aligent/microservices
