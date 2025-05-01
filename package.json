@@ -21,23 +21,23 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "@eslint/compat": "^1.2.7",
-    "@eslint/js": "^9.23.0",
-    "eslint-config-prettier": "^10.1.1",
+    "@eslint/compat": "^1.2.8",
+    "@eslint/js": "^9.25.1",
+    "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.2.5",
-    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "typescript-eslint": "^8.29.0"
+    "typescript-eslint": "^8.31.1"
   },
   "devDependencies": {
     "@types/eslint-plugin-jsx-a11y": "^6.10.0",
-    "eslint": "^9.23.0",
+    "eslint": "^9.25.1",
     "prettier": "^3.5.3",
-    "rollup": "^4.38.0",
-    "typescript": "^5.8.2"
+    "rollup": "^4.40.1",
+    "typescript": "^5.8.3"
   },
   "packageManager": "yarn@4.8.1+sha512.bc946f2a022d7a1a38adfc15b36a66a3807a67629789496c3714dd1703d2e6c6b1c69ff9ec3b43141ac7a1dd853b7685638eb0074300386a59c18df351ef8ff6"
 }
