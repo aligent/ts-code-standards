@@ -65,7 +65,7 @@ Standard code quality tooling for projects written in TypeScript.
 ##### Add the following to your `tsconfig.json`:
 
 ```json
-{ "extends": "@aligent/ts-code-standards/tsconfigs-base" }
+{ "extends": "@aligent/ts-code-standards/tsconfigs/base.json" }
 ```
 
 #### React Projects
@@ -91,7 +91,7 @@ Standard code quality tooling for projects written in TypeScript.
 ##### Add the following to your `tsconfig.json`:
 
 ```json
-{ "extends": "@aligent/ts-code-standards/tsconfigs-react" }
+{ "extends": "@aligent/ts-code-standards/tsconfigs/react.json" }
 ```
 
 ## Notes
