@@ -40,11 +40,9 @@ Standard code quality tooling for projects written in TypeScript.
   module.exports = prettierConfig;
   ```
 
-### Install the ESLint and TypeScript configs:
+### Add the following to your `eslint.config.js`:
 
 #### General Projects
-
-##### Add the following to your `eslint.config.js`:
 
 - For ES modules project:
 
@@ -62,15 +60,7 @@ Standard code quality tooling for projects written in TypeScript.
   module.exports = [...eslintConfigs.base];
   ```
 
-##### Add the following to your `tsconfig.json`:
-
-```json
-{ "extends": "@aligent/ts-code-standards/tsconfigs/base.json" }
-```
-
 #### React Projects
-
-##### Add the following to your `eslint.config.js`:
 
 - For ES modules project:
 
@@ -88,14 +78,29 @@ Standard code quality tooling for projects written in TypeScript.
   module.exports = [...eslintConfigs.react];
   ```
 
-##### Add the following to your `tsconfig.json`:
+### Add the following to your `tsconfig.json`:
 
-```json
-{ "extends": "@aligent/ts-code-standards/tsconfigs/react.json" }
-```
+- General project:
+
+  ```json
+  { "extends": "@aligent/ts-code-standards/tsconfigs-base" }
+  ```
+
+- Extend project (general project but requires TypeScript project references features):
+
+  ```json
+  { "extends": "@aligent/ts-code-standards/tsconfigs-extend" }
+  ```
+
+- React project:
+  
+  ```json
+  { "extends": "@aligent/ts-code-standards/tsconfigs-react" }
+  ```
 
 ## Notes
 
 - You'll need to add `include`, `exclude`, `paths` etc. to your `tsconfig` file. These settings will be project specific.
 - Your project is considered as `ES modules` project if the `type` option in the nearest `package.json` is set to `module`. Otherwise, it's a CommonJS project. For more information on this, please check [CommonJS vs. ES modules in Node.js](https://blog.logrocket.com/commonjs-vs-es-modules-node-js/).
 - For backward compatibility, we also export `./tsconfigs/base.json` and `./tsconfigs/react.json`. However, you should update to the new syntax when configuring your `tsconfig.json` when possible.
+- The `tsconfigs-extend` is the configuration for general projects that require TypeScript project references features to enable incremental builds. This is particular useful for monorepo where we have to manage different packages.
