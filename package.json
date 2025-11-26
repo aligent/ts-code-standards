@@ -7,6 +7,7 @@
       "import": "./dist/index.mjs"
     },
     "./tsconfigs-base": "./tsconfigs/base.json",
+    "./tsconfigs-extend": "./tsconfigs/extend.json",
     "./tsconfigs-react": "./tsconfigs/react.json",
     "./tsconfigs/base.json": "./tsconfigs/base.json",
     "./tsconfigs/react.json": "./tsconfigs/react.json"
