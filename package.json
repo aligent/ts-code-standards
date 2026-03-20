@@ -1,5 +1,6 @@
 {
   "name": "@aligent/ts-code-standards",
+  "repository": "https://github.com/aligent/ts-code-standards",
   "type": "module",
   "exports": {
     ".": {
