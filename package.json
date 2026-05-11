@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
-    "eslint": "^9.39.0",
+    "eslint": "^10.1.0",
     "prettier": "^3.8.3",
     "rollup": "^4.60.2",
     "typescript": "^6.0.2"
