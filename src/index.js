@@ -44,6 +44,19 @@ const base = [
             ],
         },
     },
+    {
+        files: ['**/*.{ts,tsx,js,jsx,mjs,cjs}'],
+        rules: {
+            '@typescript-eslint/consistent-type-imports': [
+                'error',
+                {
+                    prefer: 'type-imports',
+                    fixStyle: 'separate-type-imports',
+                    disallowTypeAnnotations: true,
+                },
+            ],
+        },
+    },
 ];
 
 const react = [
