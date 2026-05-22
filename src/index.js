@@ -1,6 +1,7 @@
 import { fixupPluginRules } from '@eslint/compat';
 import eslint from '@eslint/js';
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
+import noBarrelFiles from 'eslint-plugin-no-barrel-files';
 import eslintPluginPrettier from 'eslint-plugin-prettier/recommended';
 import reactPlugin from 'eslint-plugin-react';
 import hooksPlugin from 'eslint-plugin-react-hooks';
@@ -48,6 +49,7 @@ const base = [
 
 const react = [
     ...base,
+    ...noBarrelFiles.configs['flat/recommended'],
     reactPlugin.configs.flat.recommended,
     jsxA11yPlugin.flatConfigs.recommended,
     // `react-hooks` plugin doesn't support "flat configs" yet so it has to be wrapped in the compatibility layer
