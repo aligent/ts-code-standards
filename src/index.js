@@ -10,6 +10,7 @@ import tsEslint from 'typescript-eslint';
 const base = [
     eslint.configs.recommended,
     ...tsEslint.configs.recommended,
+    ...noBarrelFiles.configs['flat/recommended'],
     eslintPluginPrettier,
     {
         rules: {
@@ -62,7 +63,6 @@ const base = [
 
 const react = [
     ...base,
-    ...noBarrelFiles.configs['flat/recommended'],
     reactPlugin.configs.flat.recommended,
     jsxA11yPlugin.flatConfigs.recommended,
     // `react-hooks` plugin doesn't support "flat configs" yet so it has to be wrapped in the compatibility layer
