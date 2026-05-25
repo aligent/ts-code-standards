@@ -6,6 +6,10 @@ export default [
         settings: { react: { version: '18' } },
     },
     {
+        files: ['prettier.config.js'],
+        rules: { 'no-barrel-files/no-barrel-files': 'off' },
+    },
+    {
         ignores: ['dist/'],
     },
 ];
