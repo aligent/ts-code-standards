@@ -63,13 +63,18 @@ const base = [
 
 const react = [
     ...base,
-    reactPlugin.configs.flat.recommended,
-    jsxA11yPlugin.flatConfigs.recommended,
-    // `react-hooks` plugin doesn't support "flat configs" yet so it has to be wrapped in the compatibility layer
     {
-        plugins: { 'react-hooks': fixupPluginRules(hooksPlugin) },
-        rules: hooksPlugin.configs.recommended.rules,
+        // `eslint-plugin-react` (7.37.5, the latest release) calls the removed
+        // `context.getFilename()` API when resolving the React version, which throws
+        // "Error while loading rule 'react/display-name'" on ESLint 10 whenever
+        // `settings.react.version` is 'detect'. Wrapping the plugin with fixupPluginRules
+        // restores the legacy context methods, so version detection keeps working.
+        // Replace this object with `reactPlugin.configs.flat.recommended` once the plugin supports ESLint 10.
+        ...reactPlugin.configs.flat.recommended,
+        plugins: { react: fixupPluginRules(reactPlugin) },
     },
+    jsxA11yPlugin.flatConfigs.recommended,
+    hooksPlugin.configs.flat.recommended,
     {
         settings: { react: { version: 'detect' } },
         rules: {
