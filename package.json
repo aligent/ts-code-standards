@@ -33,13 +33,13 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "prettier-plugin-organize-imports": "^4.3.0",
     "prettier-plugin-tailwindcss": "^0.8.1",
-    "typescript-eslint": "^8.65.0"
+    "typescript-eslint": "^8.68.0"
   },
   "devDependencies": {
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
-    "eslint": "^10.8.0",
+    "eslint": "^10.9.1",
     "prettier": "^3.9.6",
-    "rollup": "^4.62.3",
+    "rollup": "^4.63.1",
     "typescript": "^6.0.2"
   },
   "packageManager": "yarn@4.9.2+sha512.1fc009bc09d13cfd0e19efa44cbfc2b9cf6ca61482725eb35bbc5e257e093ebf4130db6dfe15d604ff4b79efd8e1e8e99b25fa7d0a6197c9f9826358d4d65c3c"
